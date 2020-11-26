@@ -1,14 +1,19 @@
-# Machine learning with `scikit-learn`
+# Machine learning with [`scikit-learn`](https://scikit-learn.org/)
 
 ## by [Nayat Sánchez Pi](http://www.nayatsanchezpi.com) and [Luis Martí](http://lmarti.com)
 
 A repository of [Jupyter](https://www.jupyter.org)/[IPython](https://www.ipython.org) notebooks with the slides and code examples for our machine learning course for Sernageomin.
 
+[![Inria](https://img.shields.io/badge/Made%20in-Inria-%23e63312)](http://inria.cl)
+[![License: CeCILLv2.1](https://img.shields.io/badge/license-CeCILL--v2.1-orange)](https://cecill.info/licences.en.html)
 ![Python 3.x](https://img.shields.io/badge/python-3.x-green.svg)
-[![nbviwer](https://img.shields.io/badge/view%20in-nbviewer-orange.svg)](http://nbviewer.jupyter.org/github/lmarti/ml-sklearn-sernageomin/tree/master/)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lmarti/ml-sklearn-sernageomin)
-[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/lmarti/ml-sklearn-sernageomin/master)
-[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
+[![nbviwer](https://img.shields.io/badge/view%20in-nbviewer-orange.svg)](http://nbviewer.jupyter.org/github/Inria-Chile/ml-with-sklearn/tree/master/)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Inria-Chile/ml-with-sklearn)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Inria-Chile/ml-with-sklearn)
+
+## Using the notebooks on the cloud
+
+Open the notebooks in [MyBinder](https://mybinder.org/v2/gh/Inria-Chile/ml-with-sklearn/HEAD) (recommended) or in [Google Colab](https://colab.research.google.com/github/Inria-Chile/ml-with-sklearn).
 
 ## Installing locally
 
