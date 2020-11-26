@@ -1,0 +1,11 @@
+numpy
+scikit-learn
+scipy
+ipywidgets
+matplotlib
+pandas
+tdqm
+seaborn
+RISE
+deap
+notebook
