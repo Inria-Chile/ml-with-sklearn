@@ -113,8 +113,7 @@ def model_accuracy(model, X, labels):
     return float((predicted == labels).sum()) / len(labels)
 
 
-def convolve(feature_maps, kernels, bias, stride_y=1, stride_x=1,
-             compiler="gcc"):
+def convolve(feature_maps, kernels, bias, stride_y=1, stride_x=1, compiler="gcc"):
     """Convolve I 2-dimensional feature maps to generate J output feature maps.
 
     **Parameters**
@@ -137,12 +136,11 @@ def convolve(feature_maps, kernels, bias, stride_y=1, stride_x=1,
     assert I == kernels.shape[1]
     Y_k = kernels.shape[2]
     X_k = kernels.shape[3]
-    Y_o = (Y-2*(Y_k/2))/stride_y
-    X_o = (X-2*(X_k/2))/stride_x
+    Y_o = (Y - 2 * (Y_k / 2)) / stride_y
+    X_o = (X - 2 * (X_k / 2)) / stride_x
     a = numpy.zeros((J, Y_o, X_o))
 
-    code = \
-        """
+    code = """
         for(int j = 0; j < J; j++)
         {
             for(int i = 0; i < I; i++)
@@ -162,17 +160,30 @@ def convolve(feature_maps, kernels, bias, stride_y=1, stride_x=1,
             }
         }
         """
-    variables = ["J", "I", "Y_o", "X_o", "stride_x", "stride_y", "Y_k", "X_k",
-                 "feature_maps", "kernels", "bias", "a"]
+    variables = [
+        "J",
+        "I",
+        "Y_o",
+        "X_o",
+        "stride_x",
+        "stride_y",
+        "Y_k",
+        "X_k",
+        "feature_maps",
+        "kernels",
+        "bias",
+        "a",
+    ]
 
-    scipy.weave.inline(code, variables,
-                       type_converters=scipy.weave.converters.blitz,
-                       compiler=compiler)
+    scipy.weave.inline(
+        code, variables, type_converters=scipy.weave.converters.blitz, compiler=compiler
+    )
     return a
 
 
-def back_convolve(feature_maps, kernels, bias, deltas, stride_y=1, stride_x=1,
-                  compiler="gcc"):
+def back_convolve(
+    feature_maps, kernels, bias, deltas, stride_y=1, stride_x=1, compiler="gcc"
+):
     """Convolve I 2-dimensional feature_maps to generate J output feature_maps.
 
     **Parameters**
@@ -198,15 +209,14 @@ def back_convolve(feature_maps, kernels, bias, deltas, stride_y=1, stride_x=1,
     assert I == kernels.shape[1]
     Y_k = kernels.shape[2]
     X_k = kernels.shape[3]
-    Y_o = (Y-2*(Y_k/2))/stride_y
-    X_o = (X-2*(X_k/2))/stride_x
+    Y_o = (Y - 2 * (Y_k / 2)) / stride_y
+    X_o = (X - 2 * (X_k / 2)) / stride_x
 
     der = numpy.zeros_like(kernels)
     derb = numpy.zeros_like(bias)
     e = numpy.zeros_like(feature_maps)
 
-    code = \
-        """
+    code = """
         for(int j = 0; j < J; j++)
         {
             for(int i = 0; i < I; i++)
@@ -231,10 +241,24 @@ def back_convolve(feature_maps, kernels, bias, deltas, stride_y=1, stride_x=1,
             }
         }
         """
-    variables = ["J", "I", "Y_o", "X_o", "stride_x", "stride_y", "Y_k", "X_k",
-                 "kernels", "feature_maps", "deltas", "der", "derb", "e"]
+    variables = [
+        "J",
+        "I",
+        "Y_o",
+        "X_o",
+        "stride_x",
+        "stride_y",
+        "Y_k",
+        "X_k",
+        "kernels",
+        "feature_maps",
+        "deltas",
+        "der",
+        "derb",
+        "e",
+    ]
 
-    scipy.weave.inline(code, variables,
-                       type_converters=scipy.weave.converters.blitz,
-                       compiler=compiler)
+    scipy.weave.inline(
+        code, variables, type_converters=scipy.weave.converters.blitz, compiler=compiler
+    )
     return der, derb, e
