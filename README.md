@@ -17,9 +17,32 @@ Open the notebooks in [MyBinder](https://mybinder.org/v2/gh/Inria-Chile/ml-with-
 
 ## Installing locally
 
-* Coded in Python 3.x; Python 2.x is **not** supported.
-* See [`requirements.txt`](https://github.com/lmarti/machine-learning/blob/master/requirements.txt) for a full list of requirements.
-* Run `pip install -r requirements.txt` to install all dependencies.
+- Requirements:
+  - Python >=3.8 and <12 and
+  - [Poetry dependency manager](https://python-poetry.org).
+- Install required libraries (they will go in a `.venv` virtual environment in the current folder).
+
+  ```zsh
+  poetry install
+  ```
+
+- Activate virtual environment:
+
+  ```zsh
+  poetry shell
+  ```
+
+- Run notebooks:
+
+  ```zsh
+  jupyter notebook
+  ```
+
+- Check that all notebooks are working (will take a while):
+
+  ```zsh
+  pytest -n=auto --nbmake --nbmake-timeout=600 **/*ipynb 
+  ```
 
 ## Third-party images and materials usage note
 
