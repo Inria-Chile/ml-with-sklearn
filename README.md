@@ -1,6 +1,6 @@
 # Machine learning with [`scikit-learn`](https://scikit-learn.org/)
 
-## by [Nayat Sánchez Pi](http://www.nayatsanchezpi.com) and [Luis Martí](http://lmarti.com)
+## by [Nayat Sánchez-Pi](http://www.nayatsanchezpi.com) and [Luis Martí](http://lmarti.com)
 
 A repository of [Jupyter](https://www.jupyter.org)/[IPython](https://www.ipython.org) notebooks with the slides and code examples for our machine learning course for Sernageomin.
 
