@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "ml-with-sllearn"
+name = "ml-with-sklearn"
 version = "0.0.1"
 description = "A live course on using scikit-learn for machine learning"
 authors = [
