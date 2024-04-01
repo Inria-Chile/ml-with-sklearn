@@ -2,7 +2,7 @@
 
 ## by [Nayat Sánchez-Pi](http://www.nayatsanchezpi.com) and [Luis Martí](http://lmarti.com)
 
-A repository of [Jupyter](https://www.jupyter.org)/[IPython](https://www.ipython.org) notebooks with the slides and code examples for our machine learning course for Sernageomin.
+A repository of [Jupyter](https://www.jupyter.org) notebooks with the slides and code examples for our machine learning course using [scikit-learn](https://scikit-learn.org).
 
 [![Inria](https://img.shields.io/badge/Made%20in-Inria-%23e63312)](http://inria.cl)
 [![License: CeCILLv2.1](https://img.shields.io/badge/license-CeCILL--v2.1-orange)](https://cecill.info/licences.en.html)
@@ -20,6 +20,7 @@ Open the notebooks in [MyBinder](https://mybinder.org/v2/gh/Inria-Chile/ml-with-
 - Requirements:
   - Python >=3.8 and <12 and
   - [Poetry dependency manager](https://python-poetry.org).
+
 - Install required libraries (they will go in a `.venv` virtual environment in the current folder).
 
   ```zsh
