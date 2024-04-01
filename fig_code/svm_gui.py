@@ -12,28 +12,25 @@ negative examples click the right button.
 
 If all examples are from the same class, it uses a one-class SVM.
 
-"""
-from __future__ import division, print_function
-
-print(__doc__)
-
 # Author: Peter Prettenhoer <peter.prettenhofer@gmail.com>
 #
 # License: BSD 3 clause
 
-import matplotlib
+"""
 
-matplotlib.use("TkAgg")
+from __future__ import division, print_function
 
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
-from matplotlib.backends.backend_tkagg import NavigationToolbar2TkAgg
-from matplotlib.figure import Figure
-from matplotlib.contour import ContourSet
 
-import Tkinter as Tk
 import sys
-import numpy as np
 
+import matplotlib
+import numpy as np
+import Tkinter as Tk
+
+# matplotlib.use("TkAgg")
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2TkAgg
+from matplotlib.contour import ContourSet
+from matplotlib.figure import Figure
 from sklearn import svm
 from sklearn.datasets import dump_svmlight_file
 from sklearn.externals.six.moves import xrange
@@ -256,18 +253,10 @@ class View(object):
             levels = [-1.0, 0.0, 1.0]
             linestyles = ["dashed", "solid", "dashed"]
             colors = "k"
-            self.contours.append(
-                self.ax.contour(X1, X2, Z, levels, colors=colors, linestyles=linestyles)
-            )
+            self.contours.append(self.ax.contour(X1, X2, Z, levels, colors=colors, linestyles=linestyles))
         elif type == 1:
-            self.contours.append(
-                self.ax.contourf(
-                    X1, X2, Z, 10, cmap=matplotlib.cm.bone, origin="lower", alpha=0.85
-                )
-            )
-            self.contours.append(
-                self.ax.contour(X1, X2, Z, [0.0], colors="k", linestyles=["solid"])
-            )
+            self.contours.append(self.ax.contourf(X1, X2, Z, 10, cmap=matplotlib.cm.bone, origin="lower", alpha=0.85))
+            self.contours.append(self.ax.contour(X1, X2, Z, [0.0], colors="k", linestyles=["solid"]))
         else:
             raise ValueError("surface type unknown")
 
@@ -350,9 +339,7 @@ class ControllBar(object):
         train_button = Tk.Button(fm, text="Fit", width=5, command=controller.fit)
         train_button.pack()
         fm.pack(side=Tk.LEFT)
-        Tk.Button(fm, text="Clear", width=5, command=controller.clear_data).pack(
-            side=Tk.LEFT
-        )
+        Tk.Button(fm, text="Clear", width=5, command=controller.clear_data).pack(side=Tk.LEFT)
 
 
 def get_parser():
